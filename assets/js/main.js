@@ -255,7 +255,11 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!card) {
                 return;
             }
-            playFingerprintSequence(() => openModal(card));
+            if (card.classList.contains('project-card')) {
+                playFingerprintSequence(() => openModal(card));
+            } else {
+                openModal(card);
+            }
         });
     });
 

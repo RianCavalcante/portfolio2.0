@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const menuIcon = document.getElementById('menu-icon');
     const closeIcon = document.getElementById('close-icon');
     const iconContainer = document.getElementById('icon-cloud-container');
+    const fingerprintOverlay = document.getElementById('fingerprint-overlay');
+    const fingerprintContainer = fingerprintOverlay ? fingerprintOverlay.querySelector('.fingerprint-container') : null;
 
     const darkParticles = {
         particles: {
@@ -220,10 +222,40 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    function playFingerprintSequence(onComplete) {
+        if (!fingerprintOverlay || !fingerprintContainer) {
+            onComplete();
+            return;
+        }
+
+        const finish = () => {
+            fingerprintContainer.classList.remove('active');
+            fingerprintOverlay.classList.add('hidden');
+            fingerprintOverlay.setAttribute('aria-hidden', 'true');
+            fingerprintContainer.removeEventListener('animationend', finish);
+            onComplete();
+        };
+
+        fingerprintOverlay.classList.remove('hidden');
+        fingerprintOverlay.setAttribute('aria-hidden', 'false');
+        fingerprintContainer.classList.remove('active');
+        void fingerprintContainer.offsetWidth;
+        fingerprintContainer.classList.add('active');
+        fingerprintContainer.addEventListener('animationend', finish, { once: true });
+        setTimeout(() => {
+            if (!fingerprintOverlay.classList.contains('hidden')) {
+                finish();
+            }
+        }, 6200);
+    }
+
     document.querySelectorAll('.details-btn').forEach(button => {
         button.addEventListener('click', (e) => {
             const card = e.currentTarget.closest('.skill-card, .project-card');
-            openModal(card);
+            if (!card) {
+                return;
+            }
+            playFingerprintSequence(() => openModal(card));
         });
     });
 

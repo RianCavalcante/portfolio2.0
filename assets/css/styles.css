@@ -673,6 +673,174 @@ body.light-mode #modal-body h4 {
 /* Removido o estilo .image-blur-overlay */
 /* Removido o ID #telemedicine-img e #cosmetics-img pois não são mais necessários para o blur */
 
+.fingerprint-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(13, 17, 23, 0.88);
+    backdrop-filter: blur(6px);
+    z-index: 70;
+}
+
+.fingerprint-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 90px;
+    border-radius: 40px;
+    background: #0f1521;
+    border: 1px solid rgba(88, 166, 255, 0.5);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4), inset 0 0 25px rgba(88, 166, 255, 0.2);
+    overflow: hidden;
+}
+
+.fingerprint-text {
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    color: #e5edf7;
+    text-transform: uppercase;
+    transition: opacity 300ms;
+}
+
+.fingerprint-svg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    stroke: #6b7280;
+    transition: opacity 1ms;
+    pointer-events: none;
+}
+
+.fingerprint-active {
+    stroke: #ffffff;
+}
+
+.fingerprint-out {
+    opacity: 1;
+}
+
+.fingerprint-ok {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.fingerprint-path-odd {
+    stroke-dasharray: 0 50px;
+    stroke-dashoffset: 1px;
+    transition: stroke-dasharray 1ms;
+}
+
+.fingerprint-path-even {
+    stroke-dasharray: 50px 50px;
+    stroke-dashoffset: -41px;
+    transition: stroke-dashoffset 1ms;
+}
+
+.fingerprint-container.active {
+    animation: fingerprint-container-seq 6s;
+}
+
+.fingerprint-container.active .fingerprint-text {
+    opacity: 0;
+    animation: fingerprint-text-seq 6s forwards;
+}
+
+.fingerprint-container.active .fingerprint-svg {
+    opacity: 1;
+    transition: opacity 300ms 200ms;
+}
+
+.fingerprint-container.active .fingerprint-base .fingerprint-path-odd {
+    stroke-dasharray: 50px 50px;
+    transition: stroke-dasharray 800ms 100ms;
+}
+
+.fingerprint-container.active .fingerprint-base .fingerprint-path-even {
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 800ms;
+}
+
+.fingerprint-container.active .fingerprint-active .fingerprint-path-odd {
+    stroke-dasharray: 50px 50px;
+    transition: stroke-dasharray 2000ms 1500ms;
+}
+
+.fingerprint-container.active .fingerprint-active .fingerprint-path-even {
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 2000ms 1300ms;
+}
+
+.fingerprint-container.active .fingerprint-out {
+    opacity: 0;
+    transition: opacity 300ms 4100ms;
+}
+
+.fingerprint-container.active .fingerprint-ok {
+    opacity: 1;
+    animation: fingerprint-ok-seq 6s forwards;
+}
+
+@keyframes fingerprint-container-seq {
+    0% { width: 220px; }
+    6% { width: 90px; }
+    71% { transform: scale(1); }
+    75% { transform: scale(1.2); }
+    77% { transform: scale(1); }
+    94% { width: 90px; }
+    100% { width: 220px; }
+}
+
+@keyframes fingerprint-text-seq {
+    0% { opacity: 1; transform: scale(1); }
+    6% { opacity: 0; transform: scale(0.5); }
+    94% { opacity: 0; transform: scale(0.5); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fingerprint-ok-seq {
+    0% { opacity: 0; transform: scale(0.5); }
+    70% { opacity: 0; transform: scale(0); }
+    75% { opacity: 1; transform: scale(1.1); }
+    77% { opacity: 1; transform: scale(1); }
+    92% { opacity: 1; transform: scale(1); }
+    96% { opacity: 0; transform: scale(0.6); }
+    100% { opacity: 0; transform: scale(0.6); }
+}
+
+body.light-mode .fingerprint-overlay {
+    background: rgba(240, 242, 245, 0.92);
+}
+
+body.light-mode .fingerprint-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(37, 99, 235, 0.45);
+    box-shadow: 0 20px 45px rgba(37, 99, 235, 0.25), inset 0 0 25px rgba(59, 130, 246, 0.18);
+}
+
+body.light-mode .fingerprint-text {
+    color: #1f2937;
+}
+
+body.light-mode .fingerprint-svg {
+    stroke: #64748b;
+}
+
+body.light-mode .fingerprint-active {
+    stroke: #1f2937;
+}
+
 @media (max-width: 320px) {
     header#inicio h1 {
         font-size: 2.5rem;

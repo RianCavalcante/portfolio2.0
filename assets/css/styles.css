@@ -667,3 +667,72 @@ body.light-mode #modal-body h4 {
 
 /* Removido o estilo .image-blur-overlay */
 /* Removido o ID #telemedicine-img e #cosmetics-img pois não são mais necessários para o blur */
+
+@media (max-width: 320px) {
+    header#inicio h1 {
+        font-size: 2.5rem;
+    }
+
+    .terminal-content {
+        gap: 1.25rem;
+    }
+
+    .terminal-photo-card {
+        max-width: 180px;
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+
+    .terminal-photo-label {
+        font-size: 0.65rem;
+        letter-spacing: 0.06em;
+    }
+
+    .terminal-photo-frame {
+        padding: 0.5rem;
+        border-radius: 0.75rem;
+    }
+
+    #projetos .project-card > .p-6 {
+        padding: 1.25rem;
+    }
+
+    #projetos .project-card h3 {
+        font-size: 1.05rem;
+    }
+
+    #projetos .project-card p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    header#inicio h1 {
+        font-size: 4.5rem;
+    }
+
+    .terminal-content {
+        gap: 3rem;
+    }
+
+    .terminal-photo-card {
+        max-width: 260px;
+        padding: 2rem 1.75rem;
+    }
+
+    .terminal-photo-frame {
+        padding: 1rem;
+    }
+
+    #projetos .grid {
+        grid-template-columns: repeat(2, minmax(0, 520px));
+        gap: 3rem;
+        justify-content: center;
+    }
+
+    #projetos .project-card {
+        max-width: 520px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

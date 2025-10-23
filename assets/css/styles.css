@@ -324,6 +324,12 @@ body.light-mode .skill-card p {
     transition: transform 0.4s ease;
 }
 
+#telemedicine-img,
+#cosmetics-img,
+#dentistry-img {
+    object-position: center top;
+}
+
 body.light-mode .project-card {
     background-color: #ffffff;
     border-color: #e5e7eb;

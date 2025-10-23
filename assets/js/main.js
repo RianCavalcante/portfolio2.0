@@ -2,21 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentTheme = localStorage.getItem('theme') || 'dark';
     const body = document.body;
     const themeToggler = document.getElementById('theme-toggler');
-
-    function applyTheme(theme) {
-        if (theme === 'light') {
-            body.classList.add('light-mode');
-        } else {
-            body.classList.remove('light-mode');
-        }
-        updateParticles(theme);
-    }
-
-    themeToggler.addEventListener('click', () => {
-        currentTheme = body.classList.contains('light-mode') ? 'dark' : 'light';
-        localStorage.setItem('theme', currentTheme);
-        applyTheme(currentTheme);
-    });
+    const iconContainer = document.getElementById('icon-cloud-container');
 
     const darkParticles = {
         particles: {
@@ -54,14 +40,47 @@ document.addEventListener('DOMContentLoaded', function () {
         retina_detect: true
     };
 
-    function updateParticles(theme) {
+    let particlesInitialized = false;
+
+    function renderParticles(theme) {
         const config = theme === 'light' ? lightParticles : darkParticles;
-        if (window.pJSDom && window.pJSDom.length > 0) {
+        if (particlesInitialized && window.pJSDom && window.pJSDom.length > 0) {
             window.pJSDom[0].pJS.fn.vendors.destroypJS();
             window.pJSDom = [];
         }
-        particlesJS('particles-js', config);
+        if (typeof particlesJS === 'function') {
+            particlesJS('particles-js', config);
+            particlesInitialized = true;
+        }
     }
+
+    function scheduleParticles(theme) {
+        if (particlesInitialized) {
+            renderParticles(theme);
+            return;
+        }
+        const start = () => renderParticles(theme);
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(start, { timeout: 600 });
+        } else {
+            setTimeout(start, 200);
+        }
+    }
+
+    function applyTheme(theme) {
+        if (theme === 'light') {
+            body.classList.add('light-mode');
+        } else {
+            body.classList.remove('light-mode');
+        }
+        scheduleParticles(theme);
+    }
+
+    themeToggler.addEventListener('click', () => {
+        currentTheme = body.classList.contains('light-mode') ? 'dark' : 'light';
+        localStorage.setItem('theme', currentTheme);
+        applyTheme(currentTheme);
+    });
 
     const words = [
         'Especialista em Automação Inteligente',
@@ -98,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     type();
 
-    const observer = new IntersectionObserver((entries) => {
+    const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
@@ -106,23 +125,44 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }, { threshold: 0.15 });
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    try {
-        TagCanvas.Start('iconCanvas', 'icon-tags', {
-            textColour: '#58a6ff',
-            outlineColour: 'transparent',
-            reverse: true,
-            depth: 0.8,
-            maxSpeed: 0.05,
-            weight: true,
-            imageScale: 1.2,
-            initial: [0.05, -0.05],
-            wheelZoom: false
-        });
-    } catch (e) {
-        console.error('Erro ao iniciar TagCanvas:', e);
-        document.getElementById('icon-cloud-container').style.display = 'none';
+    let tagCanvasStarted = false;
+    function startTagCanvas() {
+        if (tagCanvasStarted || typeof TagCanvas === 'undefined') {
+            return;
+        }
+        try {
+            TagCanvas.Start('iconCanvas', 'icon-tags', {
+                textColour: '#58a6ff',
+                outlineColour: 'transparent',
+                reverse: true,
+                depth: 0.8,
+                maxSpeed: 0.05,
+                weight: true,
+                imageScale: 1.2,
+                initial: [0.05, -0.05],
+                wheelZoom: false
+            });
+            tagCanvasStarted = true;
+        } catch (e) {
+            console.error('Erro ao iniciar TagCanvas:', e);
+            if (iconContainer) {
+                iconContainer.style.display = 'none';
+            }
+        }
+    }
+
+    if (iconContainer) {
+        const tagObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    startTagCanvas();
+                    obs.disconnect();
+                }
+            });
+        }, { threshold: 0.1 });
+        tagObserver.observe(iconContainer);
     }
 
     const navLinks = document.querySelectorAll('.nav-link');

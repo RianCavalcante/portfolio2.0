@@ -324,10 +324,16 @@ body.light-mode .skill-card p {
     transition: transform 0.4s ease;
 }
 
-#telemedicine-img,
-#cosmetics-img,
+#telemedicine-img {
+    object-position: center 35%;
+}
+
+#cosmetics-img {
+    object-position: center 38%;
+}
+
 #dentistry-img {
-    object-position: center top;
+    object-position: center 45%;
 }
 
 body.light-mode .project-card {

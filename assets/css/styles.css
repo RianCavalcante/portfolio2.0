@@ -393,6 +393,40 @@ body.light-mode .skill-card p {
     border: 1px solid #30363d;
     transition: all 0.3s ease;
     overflow: hidden;
+    position: relative;
+}
+
+.project-card--case::before {
+    content: "Caso de Estudo";
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(35%, -40%) rotate(45deg);
+    background: linear-gradient(135deg, rgba(88, 166, 255, 0.85), rgba(88, 166, 255, 0.55));
+    color: #0d1117;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.45rem 2.6rem;
+    box-shadow: 0 8px 16px rgba(88, 166, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    z-index: 3;
+    pointer-events: none;
+}
+
+.project-card--case::after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(88, 166, 255, 0.8) 0%, rgba(88, 166, 255, 0.35) 65%, transparent 100%);
+    filter: blur(0.3px);
+    pointer-events: none;
+    z-index: 2;
 }
 
 .project-card:hover .project-image img {

@@ -38,6 +38,11 @@ body.light-mode .navbar {
     border-bottom-color: #d1d5db;
 }
 
+body.light-mode #mobile-menu {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-bottom-color: #d1d5db;
+}
+
 .nav-link {
     position: relative;
     transition: color 0.3s ease;

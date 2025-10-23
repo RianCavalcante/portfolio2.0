@@ -2,6 +2,10 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentTheme = localStorage.getItem('theme') || 'dark';
     const body = document.body;
     const themeToggler = document.getElementById('theme-toggler');
+    const mobileToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
     const iconContainer = document.getElementById('icon-cloud-container');
 
     const darkParticles = {
@@ -233,6 +237,37 @@ document.addEventListener('DOMContentLoaded', function () {
             card.style.setProperty('--mouse-y', `${y}px`);
         });
     });
+
+    if (mobileToggle && mobileMenu) {
+        const mobileLinks = mobileMenu.querySelectorAll('.nav-link');
+
+        function toggleMobileMenu(forceClose = false) {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            if (forceClose || isOpen) {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+                mobileToggle.setAttribute('aria-expanded', 'false');
+            } else {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+                mobileToggle.setAttribute('aria-expanded', 'true');
+            }
+        }
+
+        mobileToggle.addEventListener('click', () => toggleMobileMenu());
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => toggleMobileMenu(true));
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                toggleMobileMenu(true);
+            }
+        });
+    }
 
     applyTheme(currentTheme);
 });

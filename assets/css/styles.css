@@ -1,0 +1,577 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Fira Code', monospace;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* --- Tema Claro --- */
+body.light-mode {
+    background-color: #f0f2f5;
+    color: #1c1e21;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+.navbar {
+    background-color: rgba(13, 17, 23, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #30363d;
+    transition: top 0.3s ease-in-out, background-color 0.5s ease, border-color 0.5s ease;
+}
+
+body.light-mode .navbar {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-bottom-color: #d1d5db;
+}
+
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+body.light-mode .nav-link {
+    color: #374151;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #58a6ff;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link.active,
+.nav-link:hover {
+    color: #58a6ff;
+}
+
+/* Efeito de sublinhado no nome */
+.brand-link {
+    position: relative;
+    display: inline-block;
+    padding: 5px 0;
+}
+
+.brand-link::after,
+.brand-link::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #58a6ff;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.4s ease-out;
+}
+
+.brand-link::after {
+    bottom: 0;
+    transform-origin: right;
+}
+
+.brand-link::before {
+    top: 0;
+    transform-origin: left;
+}
+
+.brand-link:hover::after,
+.brand-link:hover::before {
+    transform: scaleX(1);
+}
+
+.terminal-header {
+    background-color: #161b22;
+    border-bottom: 1px solid #30363d;
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+
+body.light-mode .terminal-header {
+    background-color: #e5e7eb;
+    border-bottom-color: #d1d5db;
+}
+
+.terminal-window {
+    border: 1px solid #30363d;
+    background-color: rgba(22, 27, 34, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s ease;
+}
+
+body.light-mode .terminal-window {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-color: #d1d5db;
+    color: #1f2937;
+}
+
+.terminal-window:hover {
+    box-shadow: 0 0 25px rgba(88, 166, 255, 0.15);
+}
+
+body.light-mode .terminal-window:hover {
+    box-shadow: 0 0 25px rgba(88, 166, 255, 0.3);
+}
+
+body.light-mode .terminal-header p {
+    color: #4b5563;
+}
+
+body.light-mode #terminal-body p {
+    color: #374151;
+}
+
+.accent-color {
+    color: #58a6ff;
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background-color: #58a6ff;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.animated-underline::after {
+    animation: expandUnderline 1.5s forwards, pulseUnderline 1.5s infinite alternate;
+    animation-delay: 0.5s;
+}
+
+@keyframes expandUnderline {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 50px;
+    }
+}
+
+@keyframes pulseUnderline {
+    0% {
+        opacity: 1;
+        transform: translateX(-50%) scaleX(1);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: translateX(-50%) scaleX(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) scaleX(1);
+    }
+}
+
+.btn-premium {
+    background-color: #58a6ff1a;
+    border: 1px solid #58a6ff;
+    color: #58a6ff;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-premium:hover {
+    color: #0d1117;
+    box-shadow: 0 0 15px rgba(88, 166, 255, 0.3);
+}
+
+body.light-mode .btn-premium:hover {
+    color: #ffffff;
+}
+
+.btn-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #58a6ff;
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.btn-premium:hover::before {
+    width: 100%;
+}
+
+.blinking-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1.2rem;
+    background-color: #58a6ff;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    from,
+    to {
+        background-color: transparent;
+    }
+
+    50% {
+        background-color: #58a6ff;
+    }
+}
+
+.skill-card {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card>* {
+    position: relative;
+    z-index: 2;
+}
+
+.card-spotlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(88, 166, 255, 0.15), rgba(88, 166, 255, 0.05), transparent 40%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.skill-card:hover .card-spotlight {
+    opacity: 1;
+}
+
+body.light-mode .skill-card {
+    background-color: #ffffff;
+    border-color: #e5e7eb;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: #58a6ff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .skill-card:hover {
+    box-shadow: 0 10px 30px rgba(88, 166, 255, 0.2);
+}
+
+body.light-mode .skill-card h3 {
+    color: #111827;
+}
+
+body.light-mode .skill-card p {
+    color: #6b7280;
+}
+
+.project-card {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-image {
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    position: relative;
+}
+
+.project-image img {
+    transition: transform 0.4s ease;
+}
+
+body.light-mode .project-card {
+    background-color: #ffffff;
+    border-color: #e5e7eb;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: #58a6ff;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+body.light-mode .project-card p {
+    color: #4b5563;
+}
+
+/* Estilos dos ícones de contato */
+.footer-icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #30363d;
+    z-index: 1;
+    transition: all 0.5s ease;
+}
+
+.footer-icon svg {
+    position: relative;
+    z-index: 3;
+    transition: all 0.5s ease;
+}
+
+.footer-icon:hover svg {
+    color: #ffffff;
+    transform: rotateY(360deg);
+}
+
+.footer-icon::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    z-index: 2;
+}
+
+.footer-icon:hover::before {
+    top: 0;
+}
+
+.footer-icon[title="Email"]::before {
+    background: #58a6ff;
+}
+
+.footer-icon[title="LinkedIn"]::before {
+    background: #0077b5;
+}
+
+.footer-icon[title="WhatsApp"]::before {
+    background: #25D366;
+}
+
+.footer-icon[title="GitHub"]::before {
+    background: #333;
+}
+
+body.light-mode .footer-icon {
+    border-color: #d1d5db;
+}
+
+body.light-mode .footer-icon svg {
+    color: #4b5563;
+}
+
+body.light-mode p,
+body.light-mode .text-gray-400 {
+    color: #4b5563;
+}
+
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3 {
+    color: #111827;
+}
+
+body.light-mode .text-gray-500 {
+    color: #6b7280;
+}
+
+body.light-mode .border-gray-800 {
+    border-color: #e5e7eb;
+}
+
+body.light-mode .bg-\[\#0d1117\] {
+    background-color: #f0f2f5;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#iconCanvas {
+    max-width: 100%;
+    width: 100%;
+}
+
+#theme-toggler {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    position: relative;
+}
+
+#theme-toggler svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.ripple-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(173, 216, 230, 0.5);
+    transform: scale(0);
+    animation: ripple-animation 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+#sun-icon {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+}
+
+#moon-icon {
+    transform: scale(0) rotate(90deg);
+    opacity: 0;
+}
+
+body.light-mode #sun-icon {
+    transform: scale(0) rotate(-90deg);
+    opacity: 0;
+}
+
+body.light-mode #moon-icon {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+}
+
+#details-modal {
+    transition: opacity 0.3s ease;
+}
+
+#details-modal.visible {
+    display: flex;
+}
+
+#modal-content {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+#details-modal.visible #modal-content {
+    opacity: 1;
+    transform: scale(1);
+}
+
+body.light-mode #modal-content {
+    background-color: #ffffff;
+    border-color: #e5e7eb;
+}
+
+.details-btn {
+    background: transparent;
+    border: 1px solid transparent;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.skill-card:hover .details-btn {
+    border-color: #58a6ff;
+    background-color: rgba(88, 166, 255, 0.1);
+}
+
+#modal-body ul {
+    list-style-position: inside;
+    margin-top: 1rem;
+}
+
+#modal-body li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#modal-body li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #58a6ff;
+}
+
+#modal-body h4 {
+    font-weight: 600;
+    color: #c9d1d9;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+body.light-mode #modal-body h4 {
+    color: #111827;
+}
+
+#modal-body img {
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    border: 1px solid #30363d;
+}
+
+/* Removido o estilo .image-blur-overlay */
+/* Removido o ID #telemedicine-img e #cosmetics-img pois não são mais necessários para o blur */

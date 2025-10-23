@@ -1,0 +1,12 @@
+# Diretórios de dependências e builds
+node_modules/
+dist/
+build/
+
+# Sistemas operacionais
+.DS_Store
+Thumbs.db
+
+# Logs e temporários
+*.log
+*.tmp

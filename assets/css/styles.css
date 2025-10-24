@@ -38,6 +38,86 @@ body.light-mode .navbar {
     border-bottom-color: #d1d5db;
 }
 
+.language-toggle {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #e5edf7;
+    background: rgba(21, 32, 43, 0.65);
+    border: 1px solid rgba(88, 166, 255, 0.45);
+    border-radius: 9999px;
+    overflow: hidden;
+    transition: all 0.35s ease;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 6px 18px rgba(10, 25, 47, 0.35);
+}
+
+.language-toggle::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(88, 166, 255, 0.35), rgba(88, 166, 255, 0));
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.language-toggle::after {
+    content: "";
+    position: absolute;
+    top: -120%;
+    left: -30%;
+    width: 160%;
+    height: 160%;
+    background: radial-gradient(circle, rgba(88, 166, 255, 0.4) 0%, transparent 65%);
+    opacity: 0;
+    transition: transform 0.45s ease, opacity 0.45s ease;
+}
+
+.language-toggle span {
+    position: relative;
+    z-index: 1;
+    font-weight: 600;
+}
+
+.language-toggle:hover::before,
+.language-toggle.active::before {
+    opacity: 1;
+}
+
+.language-toggle:hover::after,
+.language-toggle.active::after {
+    opacity: 1;
+    transform: translate3d(10%, 25%, 0);
+}
+
+.language-toggle:hover,
+.language-toggle.active {
+    color: #0d1117;
+    background: rgba(88, 166, 255, 0.85);
+    border-color: rgba(148, 211, 255, 0.65);
+}
+
+body.light-mode .language-toggle {
+    color: #1f2937;
+    background: rgba(229, 231, 235, 0.85);
+    border-color: rgba(37, 99, 235, 0.35);
+    box-shadow: 0 6px 18px rgba(59, 130, 246, 0.22);
+}
+
+body.light-mode .language-toggle:hover,
+body.light-mode .language-toggle.active {
+    color: #0b1120;
+}
+
+body.light-mode .language-toggle::before {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(59, 130, 246, 0));
+}
+
 body.light-mode #mobile-menu {
     background-color: rgba(255, 255, 255, 0.9);
     border-bottom-color: #d1d5db;

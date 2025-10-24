@@ -1,24 +1,24 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Rian Cavalcante, especialista em automação inteligente com IA, integração de sistemas e otimização de processos empresariais.">
+    <meta name="description" content="PortfÃ³lio de Rian Cavalcante, especialista em automaÃ§Ã£o inteligente com IA, integraÃ§Ã£o de sistemas e otimizaÃ§Ã£o de processos empresariais.">
     <meta name="author" content="Rian Cavalcante">
-    <meta property="og:title" content="Rian Cavalcante — Especialista em Automação Inteligente">
-    <meta property="og:description" content="Conheça os projetos de automação com IA, integrações e agentes inteligentes desenvolvidos por Rian Cavalcante.">
+    <meta property="og:title" content="Rian Cavalcante â€” Especialista em AutomaÃ§Ã£o Inteligente">
+    <meta property="og:description" content="ConheÃ§a os projetos de automaÃ§Ã£o com IA, integraÃ§Ãµes e agentes inteligentes desenvolvidos por Rian Cavalcante.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:url" content="https://riancavalcante.vercel.app">
     <meta property="og:image" content="https://riancavalcante.vercel.app/assets/img/projeto-telemedicina.jpg">
     <meta property="og:image:alt" content="Interface de agente de IA desenvolvido por Rian Cavalcante">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Rian Cavalcante — Especialista em Automação Inteligente">
-    <meta name="twitter:description" content="Transforme operações empresariais com agentes e automações inteligentes criados por Rian Cavalcante.">
+    <meta name="twitter:title" content="Rian Cavalcante â€” Especialista em AutomaÃ§Ã£o Inteligente">
+    <meta name="twitter:description" content="Transforme operaÃ§Ãµes empresariais com agentes e automaÃ§Ãµes inteligentes criados por Rian Cavalcante.">
     <meta name="twitter:image" content="https://riancavalcante.vercel.app/assets/img/projeto-telemedicina.jpg">
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
     <link rel="apple-touch-icon" href="assets/img/projeto-telemedicina.jpg">
-    <title>Rian Cavalcante - Especialista em Automação Inteligente</title>
+    <title>Rian Cavalcante - Especialista em AutomaÃ§Ã£o Inteligente</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +29,7 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Rian Cavalcante",
-        "jobTitle": "Especialista em Automação Inteligente",
+        "jobTitle": "Especialista em AutomaÃ§Ã£o Inteligente",
         "url": "https://riancavalcante.vercel.app",
         "image": "https://riancavalcante.vercel.app/assets/img/perfil-linkedin.jpg",
         "sameAs": [
@@ -38,8 +38,8 @@
             "https://github.com/RianCavalcante"
         ],
         "knowsAbout": [
-            "Automação com IA",
-            "Integração de Sistemas",
+            "AutomaÃ§Ã£o com IA",
+            "IntegraÃ§Ã£o de Sistemas",
             "Agentes Inteligentes",
             "Banco de Dados",
             "WhatsApp Business"
@@ -71,12 +71,15 @@
                     </button>
                     <div class="hidden md:block">
                         <div class="ml-10 flex items-baseline space-x-4">
-                            <a href="#sobre" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Sobre</a>
-                            <a href="#habilidades" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Habilidades</a>
-                            <a href="#projetos" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Projetos</a>
-                            <a href="#contato" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Contato</a>
+                            <a href="#sobre" class="nav-link px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav.about">Sobre</a>
+                            <a href="#habilidades" class="nav-link px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav.skills">Habilidades</a>
+                            <a href="#projetos" class="nav-link px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav.projects">Projetos</a>
+                            <a href="#contato" class="nav-link px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav.contact">Contato</a>
                         </div>
                     </div>
+                    <button id="language-toggle" class="ml-3 language-toggle" type="button" aria-label="Alternar idioma">
+                        <span id="language-toggle-label">EN</span>
+                    </button>
                     <button id="theme-toggler" class="ml-4 md:ml-6" title="Alterar tema">
                         <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-300"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                         <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-300"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
@@ -86,10 +89,10 @@
         </div>
         <div id="mobile-menu" class="md:hidden hidden bg-[#0d1117] border-b border-[#30363d]">
             <div class="px-4 py-4 space-y-1">
-                <a href="#sobre" class="nav-link block px-3 py-2 rounded-md text-sm font-medium">Sobre</a>
-                <a href="#habilidades" class="nav-link block px-3 py-2 rounded-md text-sm font-medium">Habilidades</a>
-                <a href="#projetos" class="nav-link block px-3 py-2 rounded-md text-sm font-medium">Projetos</a>
-                <a href="#contato" class="nav-link block px-3 py-2 rounded-md text-sm font-medium">Contato</a>
+                <a href="#sobre" class="nav-link block px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav.about">Sobre</a>
+                <a href="#habilidades" class="nav-link block px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav.skills">Habilidades</a>
+                <a href="#projetos" class="nav-link block px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav.projects">Projetos</a>
+                <a href="#contato" class="nav-link block px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav.contact">Contato</a>
             </div>
         </div>
     </nav>
@@ -111,7 +114,7 @@
         </header>
 
         <section id="sobre" class="mb-24 md:mb-32 reveal">
-            <h2 class="section-title animated-underline text-3xl font-bold text-center mb-16">Sobre_Mim</h2>
+            <h2 class="section-title animated-underline text-3xl font-bold text-center mb-16" data-i18n="section.about.title">Sobre_Mim</h2>
             <div class="max-w-3xl mx-auto">
                 <div class="terminal-window rounded-lg overflow-hidden">
                     <div class="terminal-header p-3 flex items-center">
@@ -124,10 +127,10 @@
                     </div>
                     <div id="terminal-body" class="p-6 md:p-8 text-base leading-relaxed font-mono">
                         <div class="terminal-content">
-                            <div class="terminal-text">
-                                <p class="mb-4">&gt; Olá! Sou Rian Cavalcante, especialista em automação inteligente com IA, focado em transformar operações empresariais em processos eficientes e escaláveis.</p>
-                                <p class="mb-4">&gt; Atuo desenvolvendo agentes de IA que qualificam leads, automatizam atendimento via WhatsApp, integram CRMs e eliminam gargalos operacionais. Meu trabalho permite que empresas reduzam dependência de tarefas manuais, escalem com qualidade e liberem suas equipes para decisões estratégicas.</p>
-                                <p>&gt; Do mapeamento de processos à implementação de sistemas inteligentes, construo soluções que geram impacto real: mais conversões, pipelines previsíveis e crescimento sustentável. Atualmente aprofundando conhecimentos em Python para criar arquiteturas ainda mais robustas e personalizadas.</p>
+                                                        <div class="terminal-text">
+                                <p class="mb-4" data-i18n="about.paragraph1">&gt; Olá! Sou Rian Cavalcante, especialista em automação inteligente com IA, focado em transformar operações empresariais em processos eficientes e escaláveis.</p>
+                                <p class="mb-4" data-i18n="about.paragraph2">&gt; Atuo desenvolvendo agentes de IA que qualificam leads, automatizam atendimento via WhatsApp, integram CRMs e eliminam gargalos operacionais. Meu trabalho permite que empresas reduzam dependência de tarefas manuais, escalem com qualidade e liberem suas equipes para decisões estratégicas.</p>
+                                <p data-i18n="about.paragraph3">&gt; Do mapeamento de processos à implementação de sistemas inteligentes, construo soluções que geram impacto real: mais conversões, pipelines previsíveis e crescimento sustentável. Atualmente aprofundando conhecimentos em Python para criar arquiteturas ainda mais robustas e personalizadas.</p>
                             </div>
                             <div class="terminal-photo-card reveal" style="transition-delay: 120ms;">
                                 <span class="terminal-photo-label">Especialista em IA</span>
@@ -142,16 +145,16 @@
         </section>
 
         <section id="habilidades" class="mb-24 md:mb-32 reveal">
-            <h2 class="section-title text-3xl font-bold text-center mb-12">Habilidades_Principais</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-                <div class="skill-card p-6 rounded-lg text-center flex flex-col items-center justify-between">
+            <h2 class="section-title text-3xl font-bold text-center mb-12" data-i18n="section.skills.title">Habilidades_Principais</h2>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <div class="skill-card p-6 rounded-lg text-center flex flex-col items-center justify-between" data-skill="automation">
                     <div class="card-spotlight"></div>
                     <div>
-                        <h3 class="font-semibold mt-2 text-lg">Automação com IA</h3>
-                        <p class="text-xs text-gray-400 mt-2">Agentes para processos</p>
+                        <h3 class="font-semibold mt-2 text-lg" data-i18n="skills.automation.title">Automação com IA</h3>
+                        <p class="text-xs text-gray-400 mt-2" data-i18n="skills.automation.subtitle">Agentes para processos</p>
                     </div>
-                    <button class="details-btn mt-6 text-xs accent-color">Ver detalhes</button>
-                    <div class="details-content hidden">
+                    <button class="details-btn mt-6 text-xs accent-color" data-i18n="skills.detailButton">Ver detalhes</button>
+                    <div class="details-content hidden" data-i18n="skills.automation.details" data-i18n-html="true">
                         <p>Desenvolvo agentes de IA customizados que operam de forma autônoma para otimizar processos, reduzir custos e aumentar a eficiência operacional do seu negócio. Minhas soluções incluem:</p>
                         <ul class="space-y-2 text-left mt-4">
                             <li>Criação de agentes de IA para atendimento 24/7</li>
@@ -163,14 +166,14 @@
                         </ul>
                     </div>
                 </div>
-                <div class="skill-card p-6 rounded-lg text-center flex flex-col items-center justify-between">
+                <div class="skill-card p-6 rounded-lg text-center flex flex-col items-center justify-between" data-skill="integration">
                     <div class="card-spotlight"></div>
                     <div>
-                        <h3 class="font-semibold mt-2 text-lg">Integração de Sistemas</h3>
-                        <p class="text-xs text-gray-400 mt-2">WhatsApp, CRM, APIs</p>
+                        <h3 class="font-semibold mt-2 text-lg" data-i18n="skills.integration.title">Integração de Sistemas</h3>
+                        <p class="text-xs text-gray-400 mt-2" data-i18n="skills.integration.subtitle">WhatsApp, CRM, APIs</p>
                     </div>
-                    <button class="details-btn mt-6 text-xs accent-color">Ver detalhes</button>
-                    <div class="details-content hidden">
+                    <button class="details-btn mt-6 text-xs accent-color" data-i18n="skills.detailButton">Ver detalhes</button>
+                    <div class="details-content hidden" data-i18n="skills.integration.details" data-i18n-html="true">
                         <p>Conecto ecossistemas digitais para criar fluxos de trabalho coesos e automatizados. Minha expertise permite que diferentes plataformas, do WhatsApp ao seu CRM, conversem entre si, eliminando a entrada manual de dados e garantindo a consistência das informações.</p>
                         <ul class="space-y-2 text-left mt-4">
                             <li>Integração WhatsApp Business para atendimento automatizado</li>
@@ -182,14 +185,14 @@
                         </ul>
                     </div>
                 </div>
-                <div class="skill-card p-6 rounded-lg text-center flex flex-col items-center justify-between">
+                <div class="skill-card p-6 rounded-lg text-center flex flex-col items-center justify-between" data-skill="qualification">
                     <div class="card-spotlight"></div>
                     <div>
-                        <h3 class="font-semibold mt-2 text-lg">Qualificação Inteligente</h3>
-                        <p class="text-xs text-gray-400 mt-2">Triagem e otimização de funis</p>
+                        <h3 class="font-semibold mt-2 text-lg" data-i18n="skills.qualification.title">Qualificação Inteligente</h3>
+                        <p class="text-xs text-gray-400 mt-2" data-i18n="skills.qualification.subtitle">Triagem e otimização de funis</p>
                     </div>
-                    <button class="details-btn mt-6 text-xs accent-color">Ver detalhes</button>
-                    <div class="details-content hidden">
+                    <button class="details-btn mt-6 text-xs accent-color" data-i18n="skills.detailButton">Ver detalhes</button>
+                    <div class="details-content hidden" data-i18n="skills.qualification.details" data-i18n-html="true">
                         <p>Transformo o processo de vendas com a automação da triagem e qualificação de leads. Utilizo IA para analisar e identificar os clientes com maior potencial de conversão, permitindo que a sua equipe comercial foque em fechar negócios, e não em procurar por eles.</p>
                         <ul class="space-y-2 text-left mt-4">
                             <li>Identificação automática de perfil de cliente ideal</li>
@@ -201,14 +204,14 @@
                         </ul>
                     </div>
                 </div>
-                <div class="skill-card p-6 rounded-lg text-center flex flex-col items-center justify-between">
+                <div class="skill-card p-6 rounded-lg text-center flex flex-col items-center justify-between" data-skill="database">
                     <div class="card-spotlight"></div>
                     <div>
-                        <h3 class="font-semibold mt-2 text-lg">Banco de Dados</h3>
-                        <p class="text-xs text-gray-400 mt-2">Estruturação e Otimização</p>
+                        <h3 class="font-semibold mt-2 text-lg" data-i18n="skills.database.title">Banco de Dados</h3>
+                        <p class="text-xs text-gray-400 mt-2" data-i18n="skills.database.subtitle">Estruturação e Otimização</p>
                     </div>
-                    <button class="details-btn mt-6 text-xs accent-color">Ver detalhes</button>
-                    <div class="details-content hidden">
+                    <button class="details-btn mt-6 text-xs accent-color" data-i18n="skills.detailButton">Ver detalhes</button>
+                    <div class="details-content hidden" data-i18n="skills.database.details" data-i18n-html="true">
                         <p>Estruturo e otimizo bancos de dados que são a base para sistemas de IA de alta performance. Minha experiência abrange desde bancos relacionais (SQL) para dados estruturados, até NoSQL e vetoriais, essenciais para buscas semânticas e aplicações com LLMs.</p>
                         <ul class="space-y-2 text-left mt-4">
                             <li>Design de schemas para performance</li>
@@ -221,67 +224,57 @@
                     </div>
                 </div>
             </div>
-
-            <div class="mt-20 reveal" style="transition-delay: 200ms;">
-                <h3 class="text-2xl font-semibold text-center mb-12 text-gray-300">Ferramentas e Plataformas</h3>
-                <div class="flex flex-col md:flex-row items-center md:space-x-12">
-                    <div class="md:w-1/2 text-gray-400 text-base leading-relaxed mb-10 md:mb-0 text-center md:text-left">
-                        <p class="mb-4">
-                            Acredito que as ferramentas certas potencializam a inovação. Minha experiência abrange um ecossistema de tecnologias de ponta, desde plataformas de automação como <span class="accent-color">n8n</span> e <span class="accent-color">Make</span> até a robustez de bancos de dados como <span class="accent-color">PostgreSQL</span> e <span class="accent-color">Firebase</span>.
-                        </p>
-                        <p>
-                            Utilizo essas plataformas para construir, treinar e implantar modelos de IA. Para a hospedagem de aplicações e ferramentas essenciais, confio na performance de VPS em provedores como <span class="accent-color">DigitalOcean</span> e <span class="accent-color">Hostinger</span>, garantindo a escalabilidade e a disponibilidade dos meus projetos.
-                        </p>
-                    </div>
-                    <div class="md:w-1/2 w-full">
-                        <div id="icon-cloud-container" class="relative flex items-center justify-center w-full h-80 md:h-96">
-                            <canvas id="iconCanvas" width="600" height="600">
-                                <p>Seu navegador não suporta o canvas HTML5.</p>
-                            </canvas>
-                        </div>
-                    </div>
+        </section>
+        <div class="mt-20 reveal" style="transition-delay: 200ms;">
+            <h3 class="text-2xl font-semibold text-center mb-12 text-gray-300" data-i18n="section.tools.title">Ferramentas e Plataformas</h3>
+            <div class="flex flex-col md:flex-row items-center md:space-x-12">
+                <div class="md:w-1/2 text-gray-400 text-base leading-relaxed mb-10 md:mb-0 text-center md:text-left">
+                    <p class="mb-4" data-i18n="tools.paragraph1" data-i18n-html="true">Acredito que as ferramentas certas potencializam a inovação. Minha experiência abrange um ecossistema de tecnologias de ponta, desde plataformas de automação como <span class="accent-color">n8n</span> e <span class="accent-color">Make</span> até a robustez de bancos de dados como <span class="accent-color">PostgreSQL</span> e <span class="accent-color">Firebase</span>.</p>
+                    <p data-i18n="tools.paragraph2" data-i18n-html="true">Utilizo essas plataformas para construir, treinar e implantar modelos de IA. Para a hospedagem de aplicações e ferramentas essenciais, confio na performance de VPS em provedores como <span class="accent-color">DigitalOcean</span> e <span class="accent-color">Hostinger</span>, garantindo a escalabilidade e a disponibilidade dos meus projetos.</p>
                 </div>
-                <div id="icon-tags" class="hidden">
-                    <a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" width="50" height="50" alt="Python"></a>
-                    <a href="#"><img src="https://cdn.simpleicons.org/n8n/EE4F27" width="50" height="50" alt="n8n"></a>
-                    <a href="#"><img src="https://cdn.simpleicons.org/make/6842FF" width="50" height="50" alt="Make"></a>
-                    <a href="#"><img src="https://cdn.simpleicons.org/zapier/FF4A00" width="50" height="50" alt="Zapier"></a>
-                    <a href="#"><img src="https://cdn.simpleicons.org/openai/39C09E" width="50" height="50" alt="OpenAI"></a>
-                    <a href="#"><img src="https://cdn.simpleicons.org/googlegemini/4285F4" width="50" height="50" alt="Gemini"></a>
-                    <a href="#"><img src="https://cdn.simpleicons.org/hostinger/674CC4" width="50" height="50" alt="Hostinger"></a>
-                    <a href="#"><img src="https://cdn.simpleicons.org/digitalocean/0080FF" width="50" height="50" alt="DigitalOcean"></a>
-                    <a href="#"><img src="https://cdn.simpleicons.org/supabase/3ECF8E" width="50" height="50" alt="Supabase"></a>
-                    <a href="#"><img src="https://cdn.simpleicons.org/firebase/FFCA28" width="50" height="50" alt="Firebase"></a>
-                    <a href="#"><img src="https://cdn.simpleicons.org/postgresql/4169E1" width="50" height="50" alt="PostgreSQL"></a>
-                    <a href="#"><img src="https://cdn.simpleicons.org/redis/DC382D" width="50" height="50" alt="Redis"></a>
+                <div class="md:w-1/2 w-full">
+                    <div id="icon-cloud-container" class="relative flex items-center justify-center w-full h-80 md:h-96">
+                        <canvas id="iconCanvas" width="600" height="600">
+                            <p data-i18n="tools.canvasFallback">Seu navegador não suporta o canvas HTML5.</p>
+                        </canvas>
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <section id="projetos" class="mb-24 md:mb-32 reveal">
-            <h2 class="section-title text-3xl font-bold text-center mb-12">Projetos_em_Destaque</h2>
+            <div id="icon-tags" class="hidden">
+                <a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" width="50" height="50" alt="Python"></a>
+                <a href="#"><img src="https://cdn.simpleicons.org/n8n/EE4F27" width="50" height="50" alt="n8n"></a>
+                <a href="#"><img src="https://cdn.simpleicons.org/make/6842FF" width="50" height="50" alt="Make"></a>
+                <a href="#"><img src="https://cdn.simpleicons.org/zapier/FF4A00" width="50" height="50" alt="Zapier"></a>
+                <a href="#"><img src="https://cdn.simpleicons.org/openai/39C09E" width="50" height="50" alt="OpenAI"></a>
+                <a href="#"><img src="https://cdn.simpleicons.org/googlegemini/4285F4" width="50" height="50" alt="Gemini"></a>
+                <a href="#"><img src="https://cdn.simpleicons.org/hostinger/674CC4" width="50" height="50" alt="Hostinger"></a>
+                <a href="#"><img src="https://cdn.simpleicons.org/digitalocean/0080FF" width="50" height="50" alt="DigitalOcean"></a>
+                <a href="#"><img src="https://cdn.simpleicons.org/supabase/3ECF8E" width="50" height="50" alt="Supabase"></a>
+                <a href="#"><img src="https://cdn.simpleicons.org/firebase/FFCA28" width="50" height="50" alt="Firebase"></a>
+                <a href="#"><img src="https://cdn.simpleicons.org/postgresql/4169E1" width="50" height="50" alt="PostgreSQL"></a>
+                <a href="#"><img src="https://cdn.simpleicons.org/redis/DC382D" width="50" height="50" alt="Redis"></a>
+            </div>
+        </div><section id="projetos" class="mb-24 md:mb-32 reveal">
+            <h2 class="section-title text-3xl font-bold text-center mb-12" data-i18n="section.projects.title">Projetos_em_Destaque</h2>
             <div class="grid md:grid-cols-2 gap-8">
-
-                <div class="project-card rounded-lg">
+                <div class="project-card rounded-lg" data-project="telemedicine">
                     <div class="project-image relative">
                         <img id="telemedicine-img" src="assets/img/projeto-telemedicina.jpg" alt="Imagem do Projeto IA para Telemedicina" class="w-full h-full object-cover" loading="lazy" decoding="async" width="600" height="400">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <div>
-                            <p class="text-xs accent-color mb-1 font-semibold">Setor de Saúde</p>
-                            <h3 class="text-xl font-bold text-gray-200 light:text-gray-800">IA para Telemedicina</h3>
-                            <p class="text-sm text-gray-400 mt-2">Assistente virtual para suporte a médicos e estudantes em plantões.</p>
+                            <p class="text-xs accent-color mb-1 font-semibold" data-i18n="projects.telemedicine.sector">Setor de Saúde</p>
+                            <h3 class="text-xl font-bold text-gray-200 light:text-gray-800" data-i18n="projects.telemedicine.title">IA para Telemedicina</h3>
+                            <p class="text-sm text-gray-400 mt-2" data-i18n="projects.telemedicine.description">Assistente virtual para suporte a médicos e estudantes em plantões.</p>
                         </div>
                         <div class="mt-auto pt-4">
-                            <button class="btn-premium details-btn py-2 px-4 rounded-md text-sm w-full text-center">Ver Detalhes do Projeto</button>
+                            <button class="btn-premium details-btn py-2 px-4 rounded-md text-sm w-full text-center" data-i18n="projects.common.cta">Ver Detalhes do Projeto</button>
                         </div>
-                        <div class="details-content hidden">
+                        <div class="details-content hidden" data-i18n="projects.telemedicine.details" data-i18n-html="true">
                             <h4>O Desafio</h4>
                             <p>Proporcionar agilidade e suporte rápido a médicos e estudantes de medicina em plantões, que frequentemente necessitam de informações e auxílio em tempo real para tomada de decisão clínica.</p>
-
                             <h4>A Solução Implementada</h4>
                             <p>Desenvolvimento de uma Inteligência Artificial de telemedicina projetada para ser um assistente virtual eficiente, acelerando o processo de atendimento e fornecendo suporte baseado em protocolos médicos atualizados.</p>
-
                             <h4>Funcionalidades-Chave</h4>
                             <ul>
                                 <li><strong>Consulta de Medicação:</strong> Acesso rápido a informações de medicamentos com base em protocolos atualizados.</li>
@@ -292,26 +285,24 @@
                     </div>
                 </div>
 
-                <div class="project-card rounded-lg">
+                <div class="project-card rounded-lg" data-project="advocacy">
                     <div class="project-image">
                         <img src="assets/img/projeto-advocacia.jpg" alt="Imagem do Projeto Agente IA para Advocacia" class="w-full h-full object-cover" loading="lazy" decoding="async" width="600" height="400">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <div>
-                            <p class="text-xs accent-color mb-1 font-semibold">Setor Jurídico</p>
-                            <h3 class="text-xl font-bold text-gray-200 light:text-gray-800">Agente IA para Advocacia</h3>
-                            <p class="text-sm text-gray-400 mt-2">Automação da qualificação de leads e integração com CRM.</p>
+                            <p class="text-xs accent-color mb-1 font-semibold" data-i18n="projects.advocacy.sector">Setor Jurídico</p>
+                            <h3 class="text-xl font-bold text-gray-200 light:text-gray-800" data-i18n="projects.advocacy.title">Agente IA para Advocacia</h3>
+                            <p class="text-sm text-gray-400 mt-2" data-i18n="projects.advocacy.description">Automação da qualificação de leads e integração com CRM.</p>
                         </div>
                         <div class="mt-auto pt-4">
-                            <button class="btn-premium details-btn py-2 px-4 rounded-md text-sm w-full text-center">Ver Detalhes do Projeto</button>
+                            <button class="btn-premium details-btn py-2 px-4 rounded-md text-sm w-full text-center" data-i18n="projects.common.cta">Ver Detalhes do Projeto</button>
                         </div>
-                        <div class="details-content hidden">
+                        <div class="details-content hidden" data-i18n="projects.advocacy.details" data-i18n-html="true">
                             <h4>O Desafio</h4>
                             <p>Gerenciar e qualificar um alto volume de leads de campanhas de Facebook Ads para um escritório de advocacia, identificando os potenciais clientes de forma eficiente sem consumir o tempo da equipe jurídica.</p>
-
                             <h4>A Solução Implementada</h4>
                             <p>Criação de um agente de IA autônomo para realizar a triagem e qualificação inicial dos leads, direcionando-os para o time comercial após o agendamento e gerenciando todo o processo no CRM.</p>
-
                             <h4>Funcionalidades-Chave</h4>
                             <ul>
                                 <li><strong>Compreensão de Demanda:</strong> A IA entende a demanda específica do lead em relação ao direito trabalhista.</li>
@@ -322,26 +313,24 @@
                     </div>
                 </div>
 
-                <div class="project-card rounded-lg">
+                <div class="project-card rounded-lg" data-project="cosmetics">
                     <div class="project-image relative">
                         <img id="cosmetics-img" src="assets/img/projeto-cosmeticos.jpg" alt="Imagem do Projeto Agente IA para Cosméticos" class="w-full h-full object-cover" loading="lazy" decoding="async" width="600" height="400">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <div>
-                            <p class="text-xs accent-color mb-1 font-semibold">Setor de Varejo</p>
-                            <h3 class="text-xl font-bold text-gray-200 light:text-gray-800">Agente IA para Cosméticos</h3>
-                            <p class="text-sm text-gray-400 mt-2">Atendimento inicial, envio de catálogo e criação de orçamentos.</p>
+                            <p class="text-xs accent-color mb-1 font-semibold" data-i18n="projects.cosmetics.sector">Setor de Varejo</p>
+                            <h3 class="text-xl font-bold text-gray-200 light:text-gray-800" data-i18n="projects.cosmetics.title">Agente IA para Cosméticos</h3>
+                            <p class="text-sm text-gray-400 mt-2" data-i18n="projects.cosmetics.description">Atendimento inicial, envio de catálogo e criação de orçamentos.</p>
                         </div>
                         <div class="mt-auto pt-4">
-                            <button class="btn-premium details-btn py-2 px-4 rounded-md text-sm w-full text-center">Ver Detalhes do Projeto</button>
+                            <button class="btn-premium details-btn py-2 px-4 rounded-md text-sm w-full text-center" data-i18n="projects.common.cta">Ver Detalhes do Projeto</button>
                         </div>
-                        <div class="details-content hidden">
+                        <div class="details-content hidden" data-i18n="projects.cosmetics.details" data-i18n-html="true">
                             <h4>O Desafio</h4>
                             <p>Atender leads gerados por campanhas de Facebook Ads de forma ágil e personalizada, fornecendo informações sobre produtos e orçamentos para uma empresa de cosméticos.</p>
-
                             <h4>A Solução Implementada</h4>
                             <p>Implementação de um agente de IA para realizar o atendimento inicial e a qualificação de clientes, mantendo uma conversa personalizada e encaminhando apenas os leads prontos para a compra ao time de vendas.</p>
-
                             <h4>Funcionalidades-Chave</h4>
                             <ul>
                                 <li><strong>Catálogo Digital:</strong> Envio de tabelas de produtos atualizadas diretamente para o cliente.</li>
@@ -352,26 +341,24 @@
                     </div>
                 </div>
 
-                <div class="project-card project-card--case rounded-lg">
+                <div class="project-card project-card--case rounded-lg" data-project="dentistry" data-case-label="Caso de Estudo">
                     <div class="project-image">
                         <img id="dentistry-img" src="assets/img/projeto-dentaria.jpg" alt="Imagem do Projeto Agente IA para Clínica Dentária" class="w-full h-full object-cover" loading="lazy" decoding="async" width="600" height="400">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <div>
-                           <p class="text-xs accent-color mb-1 font-semibold">Setor Odontológico</p>
-                            <h3 class="text-xl font-bold text-gray-200 light:text-gray-800">Agente IA para Clínica Dentária</h3>
-                             <p class="text-sm text-gray-400 mt-2">Qualificação de leads e agendamento de consultas via WhatsApp.</p>
+                            <p class="text-xs accent-color mb-1 font-semibold" data-i18n="projects.dentistry.sector">Setor Odontológico</p>
+                            <h3 class="text-xl font-bold text-gray-200 light:text-gray-800" data-i18n="projects.dentistry.title">Agente IA para Clínica Dentária</h3>
+                            <p class="text-sm text-gray-400 mt-2" data-i18n="projects.dentistry.description">Qualificação de leads e agendamento de consultas via WhatsApp.</p>
                         </div>
                         <div class="mt-auto pt-4">
-                            <button class="btn-premium details-btn py-2 px-4 rounded-md text-sm w-full text-center">Ler Caso de Estudo</button>
+                            <button class="btn-premium details-btn py-2 px-4 rounded-md text-sm w-full text-center" data-i18n="projects.dentistry.cta">Ler Caso de Estudo</button>
                         </div>
-                        <div class="details-content hidden">
+                        <div class="details-content hidden" data-i18n="projects.dentistry.details" data-i18n-html="true">
                             <h4>O Desafio</h4>
                             <p>Otimizar o processo de qualificação de leads, esclarecimento de dúvidas e agendamento de consultas para uma clínica dentária, centralizando toda a comunicação e follow-ups via WhatsApp.</p>
-
                             <h4>A Solução Implementada</h4>
                             <p>Desenvolvimento de um agente de IA integrado diretamente ao WhatsApp para gerenciar todas as interações com os leads, desde o primeiro contato até o agendamento da consulta.</p>
-
                             <h4>Funcionalidades-Chave</h4>
                             <ul>
                                 <li><strong>Qualificação de Leads:</strong> Realiza o processo completo de qualificação dos leads gerados por campanhas do Facebook Ads.</li>
@@ -382,13 +369,12 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
         <footer id="contato" class="text-center border-t border-gray-800 pt-10 pb-4 reveal">
-            <h2 class="text-3xl font-bold mb-4">Vamos nos conectar</h2>
-            <p class="text-gray-400 mb-8 max-w-lg mx-auto">Estou aberto a novas oportunidades e colaborações. Sinta-se à vontade para entrar em contato.</p>
+            <h2 class="text-3xl font-bold mb-4" data-i18n="footer.title">Vamos nos conectar</h2>
+            <p class="text-gray-400 mb-8 max-w-lg mx-auto" data-i18n="footer.subtitle">Estou aberto a novas oportunidades e colaborações. Sinta-se à vontade para entrar em contato.</p>
             <div class="flex justify-center items-center space-x-6 mb-8">
                 <a href="mailto:riancavalcante505@gmail.com" class="text-gray-400 footer-icon" title="Email">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
@@ -405,7 +391,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                 </a>
             </div>
-            <p class="text-xs text-gray-500 mt-8">© 2024 Rian Cavalcante. Todos os direitos reservados.</p>
+            <p class="text-xs text-gray-500 mt-8" data-i18n="footer.copy">© 2024 Rian Cavalcante. Todos os direitos reservados.</p>
         </footer>
 
     </main>
@@ -425,7 +411,7 @@
 
     <div id="fingerprint-overlay" class="fingerprint-overlay hidden" aria-hidden="true">
         <div class="fingerprint-container">
-            <span class="fingerprint-text">Autenticando...</span>
+            <span class="fingerprint-text" data-i18n="fingerprint.status">Autenticando...</span>
             <svg class="fingerprint-svg fingerprint-base" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" aria-hidden="true">
                 <g class="fingerprint-out" fill="none" stroke-width="2" stroke-linecap="round">
                     <path class="fingerprint-path-odd" d="m 25.117139,57.142857 c 0,0 -1.968558,-7.660465 -0.643619,-13.149003 1.324939,-5.488538 4.659682,-8.994751 4.659682,-8.994751" />
@@ -481,3 +467,12 @@
     <script defer src="assets/js/main.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+

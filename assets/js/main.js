@@ -336,7 +336,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const formData = new FormData(contactForm);
             const payload = {
                 name: formData.get('name')?.trim(),
-                email: formData.get('email')?.trim(),
+                whatsapp: formData.get('whatsapp')?.trim(),
                 subject: formData.get('subject')?.trim(),
                 message: formData.get('message')?.trim(),
                 source: 'portfolio'

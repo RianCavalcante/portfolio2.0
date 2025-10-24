@@ -305,5 +305,66 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        const webhookUrl = 'https://n8n-webhook.nubuwf.easypanel.host/webhook/formsportfolio';
+        const submitButton = contactForm.querySelector('.submit-button');
+        const submitDefault = contactForm.querySelector('.submit-default');
+        const submitLoading = contactForm.querySelector('.submit-loading');
+        const feedback = document.getElementById('form-feedback');
+
+        const setSubmitting = (state) => {
+            submitButton.disabled = state;
+            submitDefault.classList.toggle('hidden', state);
+            submitLoading.classList.toggle('hidden', !state);
+        };
+
+        const showFeedback = (message, type) => {
+            if (!feedback) return;
+            feedback.textContent = message;
+            feedback.classList.remove('hidden', 'feedback-success', 'feedback-error');
+            feedback.classList.add(type === 'success' ? 'feedback-success' : 'feedback-error');
+        };
+
+        contactForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            if (!submitButton) return;
+
+            setSubmitting(true);
+            showFeedback('', 'success');
+
+            const formData = new FormData(contactForm);
+            const payload = {
+                name: formData.get('name')?.trim(),
+                email: formData.get('email')?.trim(),
+                subject: formData.get('subject')?.trim(),
+                message: formData.get('message')?.trim(),
+                source: 'portfolio'
+            };
+
+            try {
+                const response = await fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Erro ${response.status}`);
+                }
+
+                showFeedback('Mensagem enviada com sucesso! Em breve entro em contato.', 'success');
+                contactForm.reset();
+            } catch (error) {
+                showFeedback('Não foi possível enviar sua mensagem agora. Tente novamente em instantes ou use um dos canais diretos.', 'error');
+                console.error('Erro ao enviar formulário:', error);
+            } finally {
+                setSubmitting(false);
+            }
+        });
+    }
+
     applyTheme(currentTheme);
 });
